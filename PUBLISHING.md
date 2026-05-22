@@ -39,11 +39,11 @@ On GitHub: **Releases → Draft new release** → choose tag `v1.0.0`, describe 
 After the repo is public:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@v1.0.0/dist/zenobuilder.css">
-<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@v1.0.0/dist/zenobuilder.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@1.0.0/dist/zenobuilder.css">
+<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@1.0.0/dist/zenobuilder.js"></script>
 ```
 
-Pin the git tag (`@v1.0.0` matches tag `v1.0.0` on GitHub). Do not use `@main` in production.
+Pin the version (`@1.0.0` for git tag `v1.0.0`). Do not use `@main` in production.
 
 ## 5. Publish to npm (optional)
 

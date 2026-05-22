@@ -41,9 +41,9 @@ npm install zenobuilder
 Pin a [release tag](https://github.com/noturzeno/zenobuilder-laravel-cms/releases) (recommended) or use `@main` for the latest commit:
 
 ```html
-<!-- Pinned release (tag v1.0.0 on GitHub) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@v1.0.0/dist/zenobuilder.css">
-<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@v1.0.0/dist/zenobuilder.js"></script>
+<!-- Pinned release (git tag v1.0.0 → use @1.0.0 on jsDelivr) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@1.0.0/dist/zenobuilder.css">
+<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@1.0.0/dist/zenobuilder.js"></script>
 
 <!-- Latest on main (avoid in production) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@main/dist/zenobuilder.css">
