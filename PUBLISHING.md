@@ -20,7 +20,7 @@ git init
 git add .
 git commit -m "chore: initial zenobuilder v1.0.0 release"
 
-git remote add origin git@github.com:noturzeno/zenobuilder.git
+git remote add origin git@github.com:noturzeno/zenobuilder-laravel-cms.git
 git branch -M main
 git push -u origin main
 ```
@@ -39,11 +39,11 @@ On GitHub: **Releases → Draft new release** → choose tag `v1.0.0`, describe 
 After the repo is public:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder@1.0.0/dist/zenobuilder.css">
-<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder@1.0.0/dist/zenobuilder.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@v1.0.0/dist/zenobuilder.css">
+<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@v1.0.0/dist/zenobuilder.js"></script>
 ```
 
-Pin the version (`@1.0.0`), do not use `@main` in production.
+Pin the git tag (`@v1.0.0` matches tag `v1.0.0` on GitHub). Do not use `@main` in production.
 
 ## 5. Publish to npm (optional)
 

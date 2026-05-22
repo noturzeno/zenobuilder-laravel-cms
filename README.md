@@ -2,6 +2,17 @@
 
 Visual drag-and-drop CMS page builder for the browser. Vanilla JavaScript — no framework required.
 
+## Demo
+
+![Zenobuilder minimal demo — drag-and-drop block editor](docs/demo-screenshot.png)
+
+The screenshot shows [examples/minimal-builder.html](examples/minimal-builder.html): a heading block with edit/delete controls and an **Add block** modal workflow.
+
+```bash
+npx serve examples
+# open http://localhost:3000/minimal-builder.html
+```
+
 ## Features
 
 - Drag-and-drop block reordering
@@ -27,9 +38,16 @@ npm install zenobuilder
 
 ### jsDelivr (GitHub)
 
+Pin a [release tag](https://github.com/noturzeno/zenobuilder-laravel-cms/releases) (recommended) or use `@main` for the latest commit:
+
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder@1.0.0/dist/zenobuilder.css">
-<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder@1.0.0/dist/zenobuilder.js"></script>
+<!-- Pinned release (tag v1.0.0 on GitHub) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@v1.0.0/dist/zenobuilder.css">
+<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@v1.0.0/dist/zenobuilder.js"></script>
+
+<!-- Latest on main (avoid in production) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@main/dist/zenobuilder.css">
+<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder-laravel-cms@main/dist/zenobuilder.js"></script>
 ```
 
 ### Copy into your app's public folder
@@ -57,15 +75,6 @@ node scripts/sync-to-app.js /path/to/your-app/public/assets/zenobuilder
     { bodyBgColor: '#f6f5f4', cardBgColor: '#ffffff' }
   );
 </script>
-```
-
-## Standalone demo
-
-Open [examples/minimal-builder.html](examples/minimal-builder.html) in a browser (via a local static server recommended):
-
-```bash
-npx serve examples
-# open http://localhost:3000/minimal-builder.html
 ```
 
 ## Package layout
@@ -102,6 +111,16 @@ See [examples/minimal-builder.html](examples/minimal-builder.html) for a minimal
 ```bash
 # Edit files in src/, then refresh dist/
 npm run prepare
+```
+
+### Regenerate demo screenshot
+
+With [examples/minimal-builder.html](examples/minimal-builder.html) served on port `3456` and Playwright installed:
+
+```bash
+npx serve examples -l 3456 &
+npm install --no-save playwright && npx playwright install chromium
+npm run screenshot:demo
 ```
 
 ## Publishing

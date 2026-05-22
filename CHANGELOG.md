@@ -16,4 +16,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Minimal standalone example (`examples/minimal-builder.html`).
 - Optional sync script to copy `dist/` into a host app (`scripts/sync-to-app.js`).
 
-[1.0.0]: https://github.com/noturzeno/zenobuilder/releases/tag/v1.0.0
+[1.0.0]: https://github.com/noturzeno/zenobuilder-laravel-cms/releases/tag/v1.0.0

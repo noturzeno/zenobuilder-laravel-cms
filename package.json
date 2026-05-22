@@ -14,12 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noturzeno/zenobuilder.git"
+    "url": "git+https://github.com/noturzeno/zenobuilder-laravel-cms.git"
   },
   "bugs": {
-    "url": "https://github.com/noturzeno/zenobuilder/issues"
+    "url": "https://github.com/noturzeno/zenobuilder-laravel-cms/issues"
   },
-  "homepage": "https://github.com/noturzeno/zenobuilder#readme",
+  "homepage": "https://github.com/noturzeno/zenobuilder-laravel-cms#readme",
   "files": [
     "dist",
     "src",
@@ -40,7 +40,8 @@
     "./zenopreview.css": "./dist/zenopreview.css"
   },
   "scripts": {
-    "sync:assets": "node scripts/sync-to-app.js",
-    "prepare": "node scripts/prepare-dist.js"
+    "prepare": "node scripts/prepare-dist.js",
+    "screenshot:demo": "node scripts/capture-demo-screenshot.mjs",
+    "sync:assets": "node scripts/sync-to-app.js"
   }
 }
