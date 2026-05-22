@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Visual drag-and-drop CMS page builder (vanilla JavaScript)",
   "license": "MIT",
-  "author": "X Bird",
+  "author": "noturzeno",
   "keywords": [
     "page-builder",
     "cms",
@@ -40,7 +40,7 @@
     "./zenopreview.css": "./dist/zenopreview.css"
   },
   "scripts": {
-    "sync:app": "node scripts/sync-to-app.js",
+    "sync:assets": "node scripts/sync-to-app.js",
     "prepare": "node scripts/prepare-dist.js"
   }
 }

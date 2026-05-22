@@ -2,8 +2,6 @@
 
 Visual drag-and-drop CMS page builder for the browser. Vanilla JavaScript — no framework required.
 
-Extracted from the [X Bird](https://github.com/noturzeno/vo_xbirds) CMS (`vo_xbirds`) admin page builder.
-
 ## Features
 
 - Drag-and-drop block reordering
@@ -34,15 +32,12 @@ npm install zenobuilder
 <script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder@1.0.0/dist/zenobuilder.js"></script>
 ```
 
-### Copy into a Laravel app
+### Copy into your app's public folder
 
 ```bash
-cd packages/zenobuilder   # or your clone of this repo
 npm run prepare
-npm run sync:app
+node scripts/sync-to-app.js /path/to/your-app/public/assets/zenobuilder
 ```
-
-Assets land in `public/assets/zenobuilder/` (default target for X Bird).
 
 ## Quick start
 
@@ -81,7 +76,7 @@ zenobuilder/
 ├── src/            # Source of truth
 ├── docs/           # DOM contract
 ├── examples/       # Minimal integration demo
-├── scripts/        # prepare-dist, sync-to-app
+├── scripts/        # prepare-dist, sync-to-app (optional)
 └── PUBLISHING.md   # GitHub + npm release guide
 ```
 
@@ -100,16 +95,13 @@ window.AutoSaveManager = { markUnsaved() { /* ... */ } };
 window.deletedBlockIds = new Set();
 ```
 
-Reference: X Bird `resources/views/admin/cms/pages/builder.blade.php`.
+See [examples/minimal-builder.html](examples/minimal-builder.html) for a minimal markup example.
 
 ## Development
 
 ```bash
 # Edit files in src/, then refresh dist/
 npm run prepare
-
-# Push built assets into vo_xbirds public folder
-npm run sync:app
 ```
 
 ## Publishing

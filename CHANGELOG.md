@@ -9,11 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial public release extracted from X Bird CMS (`vo_xbirds`).
+- Initial public release of the standalone page builder package.
 - Builder assets: `zenobuilder.js`, `zenobuilder.css`.
 - Preview assets: `zenopreview.js`, `zenopreview.css`.
 - DOM contract documentation (`docs/DOM-CONTRACT.md`).
 - Minimal standalone example (`examples/minimal-builder.html`).
-- Sync script for Laravel host apps (`scripts/sync-to-app.js`).
+- Optional sync script to copy `dist/` into a host app (`scripts/sync-to-app.js`).
 
 [1.0.0]: https://github.com/noturzeno/zenobuilder/releases/tag/v1.0.0

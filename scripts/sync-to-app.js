@@ -1,8 +1,7 @@
 /**
- * Copy package dist/ into a Laravel (or static) app's public assets folder.
+ * Copy package dist/ into an app's public assets folder.
  *
- * Usage (from packages/zenobuilder):
- *   node scripts/sync-to-app.js
+ * Usage:
  *   node scripts/sync-to-app.js /path/to/app/public/assets/zenobuilder
  */
 import { cpSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
@@ -11,9 +10,12 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
+const target = process.argv[2];
 
-const defaultTarget = join(root, '..', '..', 'public', 'assets', 'zenobuilder');
-const target = process.argv[2] ? process.argv[2] : defaultTarget;
+if (!target) {
+  console.error('Usage: node scripts/sync-to-app.js <target-directory>');
+  process.exit(1);
+}
 
 if (!existsSync(dist)) {
   console.error('dist/ not found. Run: npm run prepare');

@@ -95,7 +95,4 @@ The builder UI assumes **Tailwind CSS** utility classes (via CDN or your build).
 
 ## Reference implementation
 
-See the X Bird CMS builder blades:
-
-- `resources/views/admin/cms/pages/builder.blade.php`
-- `resources/views/admin/cms/templates/builder.blade.php`
+See [examples/minimal-builder.html](../examples/minimal-builder.html) for the minimum DOM structure required to run the builder.
