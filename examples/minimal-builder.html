@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenobuilder — minimal example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../dist/zenobuilder.css">
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; }
+    .admin-modal-overlay { display: flex; }
+    .admin-modal-overlay.hidden { display: none !important; }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-2xl font-bold text-gray-900 mb-2">Zenobuilder minimal demo</h1>
+    <p class="text-sm text-gray-600 mb-6">
+      Static HTML matching the <a href="../docs/DOM-CONTRACT.md" class="text-blue-600 underline">DOM contract</a>.
+      Open via a local server: <code class="bg-gray-200 px-1 rounded">npx serve examples</code>
+    </p>
+
+    <div class="bg-white rounded-lg shadow border border-gray-200 p-4">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Blocks</h2>
+        <button type="button" class="open-add-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700">
+          <i class="fas fa-plus mr-1"></i> Add block
+        </button>
+      </div>
+
+      <ul class="grid grid-cols-1 gap-3" id="blocks-list">
+        <li class="text-gray-500 p-4 border border-dashed rounded-lg" data-temp-id="demo-1" data-block-type="heading">
+          <div class="flex items-center justify-between gap-2 border-b pb-2 mb-2">
+            <span class="text-xs font-semibold uppercase text-gray-500">Heading</span>
+            <div class="flex gap-1">
+              <button type="button" class="block-edit-toggle-btn px-2 py-1 text-xs border rounded" data-block-type="heading">Edit</button>
+              <button type="button" class="block-delete-btn px-2 py-1 text-xs border rounded text-red-600">Delete</button>
+            </div>
+          </div>
+          <div class="block-preview">
+            <h1 class="text-2xl font-bold">Your Heading Text</h1>
+          </div>
+          <form class="block-edit-form hidden space-y-2 mt-3 p-3 border rounded bg-gray-50">
+            <input type="hidden" name="block_type" value="heading">
+            <input type="hidden" name="width" value="full" class="hidden-width-input">
+            <input type="hidden" name="content" class="heading-content-input" value='{"text":"Your Heading Text","level":"h1","alignment":"left"}'>
+            <label class="text-xs font-medium">Heading text</label>
+            <input type="text" class="w-full border rounded px-2 py-1 text-sm" value="Your Heading Text"
+              oninput="this.closest('form').querySelector('.heading-content-input').value=JSON.stringify({text:this.value,level:'h1',alignment:'left'})">
+          </form>
+        </li>
+      </ul>
+
+      <form id="reorder-form" method="POST" action="#" class="mt-4" onsubmit="event.preventDefault(); alert(document.getElementById('orders-input').value || 'no orders');">
+        <input type="hidden" name="orders" id="orders-input">
+        <button type="submit" id="save-order-btn" class="px-4 py-2 border rounded text-sm hover:bg-gray-50">Save order (demo)</button>
+      </form>
+    </div>
+
+    <p id="status" class="mt-4 text-sm text-gray-500"></p>
+  </div>
+
+  <!-- Add block modal (required IDs) -->
+  <div id="add-block-modal" class="admin-modal-overlay z-40 hidden fixed inset-0 bg-black/40 items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col">
+      <div class="px-4 py-3 border-b flex justify-between items-center">
+        <span class="font-bold">Add Block</span>
+        <button type="button" id="close-add-block" class="text-2xl leading-none text-gray-500">&times;</button>
+      </div>
+      <div class="p-4 grid grid-cols-2 gap-2 text-sm overflow-y-auto">
+        <button type="button" class="add-block-type px-3 py-2 border rounded hover:bg-gray-50" data-type="heading" data-content='{"text":"New Heading","level":"h2","alignment":"left"}'>Heading</button>
+        <button type="button" class="add-block-type px-3 py-2 border rounded hover:bg-gray-50" data-type="divider" data-content='{"style":"solid","color":"#ccc","width":"full"}'>Divider</button>
+        <button type="button" class="add-block-type px-3 py-2 border rounded hover:bg-gray-50" data-type="spacer" data-content='{"height":"40px"}'>Spacer</button>
+        <button type="button" class="add-block-type px-3 py-2 border rounded hover:bg-gray-50" data-type="richtext" data-content='{"html":"<p>Rich text</p>"}'>Rich Text</button>
+      </div>
+      <form id="modal-add-block-form" class="hidden">
+        <input type="hidden" name="block_type" id="modal-block-type">
+        <input type="hidden" name="content" id="modal-block-content">
+        <input type="hidden" name="width" id="modal-block-width" value="full">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    window.AutoSaveManager = {
+      markUnsaved() {
+        document.getElementById('status').textContent = 'Unsaved changes (demo hook)';
+      }
+    };
+    window.deletedBlockIds = new Set();
+  </script>
+  <script src="../dist/zenobuilder.js"></script>
+</body>
+</html>

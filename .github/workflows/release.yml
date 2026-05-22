@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare dist from src
+        run: npm run prepare
+
+      - name: Verify dist artifacts
+        run: |
+          test -f dist/zenobuilder.js
+          test -f dist/zenobuilder.css
+          test -f dist/zenopreview.js
+          test -f dist/zenopreview.css
+
+      - name: Upload release assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: zenobuilder-dist
+          path: dist/

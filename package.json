@@ -1,0 +1,46 @@
+{
+  "name": "zenobuilder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Visual drag-and-drop CMS page builder (vanilla JavaScript)",
+  "license": "MIT",
+  "author": "X Bird",
+  "keywords": [
+    "page-builder",
+    "cms",
+    "drag-and-drop",
+    "visual-editor",
+    "vanilla-js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_ORG/zenobuilder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_ORG/zenobuilder/issues"
+  },
+  "homepage": "https://github.com/YOUR_ORG/zenobuilder#readme",
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "docs"
+  ],
+  "main": "dist/zenobuilder.js",
+  "style": "dist/zenobuilder.css",
+  "exports": {
+    ".": {
+      "default": "./dist/zenobuilder.js"
+    },
+    "./zenobuilder.css": "./dist/zenobuilder.css",
+    "./zenobuilder.js": "./dist/zenobuilder.js",
+    "./zenopreview": "./dist/zenopreview.js",
+    "./zenopreview.css": "./dist/zenopreview.css"
+  },
+  "scripts": {
+    "sync:app": "node scripts/sync-to-app.js",
+    "prepare": "node scripts/prepare-dist.js"
+  }
+}
