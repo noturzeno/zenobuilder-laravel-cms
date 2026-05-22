@@ -14,12 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_ORG/zenobuilder.git"
+    "url": "git+https://github.com/noturzeno/zenobuilder.git"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_ORG/zenobuilder/issues"
+    "url": "https://github.com/noturzeno/zenobuilder/issues"
   },
-  "homepage": "https://github.com/YOUR_ORG/zenobuilder#readme",
+  "homepage": "https://github.com/noturzeno/zenobuilder#readme",
   "files": [
     "dist",
     "src",

@@ -2,7 +2,7 @@
 
 Visual drag-and-drop CMS page builder for the browser. Vanilla JavaScript — no framework required.
 
-Extracted from the [X Bird](https://github.com/YOUR_ORG/vo_xbirds) CMS (`vo_xbirds`) admin page builder.
+Extracted from the [X Bird](https://github.com/noturzeno/vo_xbirds) CMS (`vo_xbirds`) admin page builder.
 
 ## Features
 
@@ -30,8 +30,8 @@ npm install zenobuilder
 ### jsDelivr (GitHub)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/YOUR_ORG/zenobuilder@1.0.0/dist/zenobuilder.css">
-<script src="https://cdn.jsdelivr.net/gh/YOUR_ORG/zenobuilder@1.0.0/dist/zenobuilder.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder@1.0.0/dist/zenobuilder.css">
+<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder@1.0.0/dist/zenobuilder.js"></script>
 ```
 
 ### Copy into a Laravel app

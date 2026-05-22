@@ -20,8 +20,8 @@ git init
 git add .
 git commit -m "chore: initial zenobuilder v1.0.0 release"
 
-# Add remote (replace YOUR_ORG)
-git remote add origin git@github.com:YOUR_ORG/zenobuilder.git
+# Add remote (replace noturzeno)
+git remote add origin git@github.com:noturzeno/zenobuilder.git
 git branch -M main
 git push -u origin main
 ```
@@ -40,8 +40,8 @@ On GitHub: **Releases → Draft new release** → choose tag `v1.0.0`, describe 
 After the repo is public:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/YOUR_ORG/zenobuilder@1.0.0/dist/zenobuilder.css">
-<script src="https://cdn.jsdelivr.net/gh/YOUR_ORG/zenobuilder@1.0.0/dist/zenobuilder.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder@1.0.0/dist/zenobuilder.css">
+<script src="https://cdn.jsdelivr.net/gh/noturzeno/zenobuilder@1.0.0/dist/zenobuilder.js"></script>
 ```
 
 Pin the version (`@1.0.0`), do not use `@main` in production.
@@ -91,7 +91,7 @@ Keep `packages/zenobuilder` in `vo_xbirds`, periodically push to GitHub:
 
 ```bash
 cd packages/zenobuilder
-git remote add github git@github.com:YOUR_ORG/zenobuilder.git
+git remote add github git@github.com:noturzeno/zenobuilder.git
 git push github main
 git push github v1.0.0
 ```
